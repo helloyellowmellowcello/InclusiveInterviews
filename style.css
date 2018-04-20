@@ -274,44 +274,44 @@ h4 {
   }
 
   .inset_image {
-    padding-top: 8vh;
+    padding-top: 8vmax;
   }
 
   h2 {
   	font-size: 4.5vw;
-  	line-height: 8vh;
+  	line-height: 8vmax;
   }
 
   h3 {
   	font-size: 2.2vw;
   	letter-spacing: 3px;
-  	line-height: 3vh;
+  	line-height: 3vmax;
   }
 
   h4 {
   	font-size: 2.5vw;
-  	line-height: 3vh;
+  	line-height: 3vmax;
   }
 
   .text {
     font-size: 2.5vw;
-    line-height: 3.5vh;
+    line-height: 3.5vmax;
   }
 
   .quote {
     	font-size: 3.2vw;
-    	line-height: 8vh;
+    	line-height: 8vmax;
   }
 
   .oprah {
   	font-size: 2.2vw;
   	letter-spacing: 3px;
-  	line-height: 3vh;
+  	line-height: 3vmax;
   }
 
   .info {
     font-size: 2.5vw;
-    line-height: 3vh;
+    line-height: 3vmax;
   }
 
 }
@@ -357,4 +357,75 @@ h4 {
     font-size: 2.5vmax;
   }
 
+}
+
+/* ----------- Google Pixel 2 XL ----------- */
+/* Portrait */
+@media only screen
+  and (device-width: 411px)
+  and (device-height: 823px)
+  and (-webkit-device-pixel-ratio: 3.5)
+  and (orientation: portrait) {
+    header {
+      height: 27vh;
+    }
+}
+
+/* --------- iPhone 6, 7, 8 Plus Portrait --------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-height: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    header {
+      height: 50vh;
+      /*The height for iPhone 6, 7, 8 Plus seems to be overwritten by iPhone X. So this code becomes useless*/
+    }
+  }
+
+/* --------- iPhone X Portrait --------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-height: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    header {
+      height: 25vh;
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    header {
+      height: 41vh;
+    }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    header {
+      height: 41vh;
+    }
+}
+/* Landscape */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    header {
+      height: 73vh;
+    }
 }
