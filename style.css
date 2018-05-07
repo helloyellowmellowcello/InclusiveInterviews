@@ -73,7 +73,8 @@ header {
 /*Add text-content-2 rule set and properties here:*/
 .text-content-2 {
   grid-row: 3 / 4;
-  grid-column: 1 / span 4;
+  /* Since this container will now hold the text and image its span needs to be updated */
+  grid-column: 1 / span 12;
 }
 /*Add text-content-3 rule set and properties here:*/
 .text-content-3 {
@@ -114,8 +115,18 @@ header {
 }
 
 .inset_image {
-  height: 300px;
-  padding-top: 50px;
+  
+  /* Side Note: There are some word spacing issues that I noticed on some screens, this is caused by the text-align justify that you have the class .text */
+  
+  
+  /* Using height caused an issue on very small screens like the Galaxy S since the image was being forced to be of size 300px instead of auto adjusting depending on its width */
+  /* Max height solved this issue was we still have the height constraint on bigger screens but on smaller screens its height is able to adjust properly */
+  max-height: 300px;
+  /* Updated the padding now the top/bottom is set to 10px and left/right is set to 5px */
+  /*  */
+  padding: 0vh 1vw;
+  /* Moves the image to the right of the text */
+  float: right;
 }
 
 h2 {
@@ -274,7 +285,11 @@ h4 {
   }
 
   .inset_image {
-    padding-top: 8vmax;
+    padding: 1vh 0vw;
+    /*  Override the default float  */
+    float: none;
+    /*  This causes the image to be contained within the bounds of the container  */
+    width: 100%
   }
 
   h2 {
@@ -319,7 +334,8 @@ h4 {
 @media(max-width: 740px) {
   .top-grid {
     display: grid;
-    grid-template: 1fr 1fr / 100%;
+    /*  Instead of manipulating the height for the various screen sizes it seemed best to update the grid-template as it achieved the best results. */
+    grid-template: 2fr / 100%;
   }
 
   .teresa-jenkins {
@@ -379,7 +395,7 @@ h4 {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
     header {
-      height: 50vh;
+/*      height: 50vh;*/
       /*The height for iPhone 6, 7, 8 Plus seems to be overwritten by iPhone X. So this code becomes useless*/
     }
   }
@@ -392,7 +408,7 @@ h4 {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
     header {
-      height: 25vh;
+/*      height: 25vh;*/
     }
 }
 
